@@ -1,6 +1,7 @@
 @import "styleParts/jobsarea.css";
 @import "styleParts/searcharea.css";
 @import "styleParts/header.css";
+@import "styleParts/modal.css";
 
 body {
   background-color: rgba(241, 240, 240, 0.459) !important;

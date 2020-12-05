@@ -1,0 +1,51 @@
+.modal-dialog {
+  margin: 50px 0px 0px 100px !important;
+}
+
+.modal-content {
+  width: 150% !important;
+  background-color: transparent;
+  border: none;
+}
+
+/* header */
+.modal-header {
+  background-color: white;
+  padding: 25px;
+}
+
+.company-logo-modal {
+  width: 20%;
+}
+
+.job-info-header {
+  padding: 25px;
+  margin-left: 65px;
+  justify-self: center;
+  align-self: center;
+}
+
+.job-info-header h4 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.job-info-header a {
+  text-decoration: none;
+  font-size: 0.8rem;
+  color: rgba(129, 129, 129, 0.829);
+}
+
+.job-info-header a:hover {
+  color: black;
+  font-weight: 500;
+}
+
+/* body */
+
+.modal-body {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 35px;
+  background-color: white;
+}
