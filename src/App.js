@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import useFetchJobs from "./useFetchJobs";
-import { Container, Button } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import Job from "./job";
 import JobsPagination from "./JobsPagination";
 import SearchForm from "./SearchForm";
@@ -21,8 +21,11 @@ function App() {
 
   return (
     <Container className="my-4">
-      <h1 className="mb-4">.devJobs!</h1>
+      <header>
+        <h1 className="mb-4">.devJobs!</h1>
+      </header>
       <SearchForm params={params} onParamChange={handleParamChange} />
+
       <JobsPagination page={page} setPage={setPage} hasNextPage={hasNextPage} />
       <div className="jobs-grid">
         {loading && <h1>Loading...</h1>}

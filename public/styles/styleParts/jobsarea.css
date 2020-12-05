@@ -70,6 +70,9 @@
 .btn-more-info {
   width: 50%;
   margin-top: 20px;
+  border-color: rgba(67, 13, 153, 0.397) !important;
+  color: rgba(38, 17, 71, 0.877);
+  font-weight: 600;
 }
 
 .btn-more-info:hover {

@@ -1,5 +1,16 @@
 @import "styleParts/jobsarea.css";
+@import "styleParts/searcharea.css";
+@import "styleParts/header.css";
 
 body {
   background-color: rgba(241, 240, 240, 0.459) !important;
+}
+
+.page-item.active .page-link {
+  background-color: rgba(66, 13, 153, 0.61) !important;
+  border-color: rgba(66, 13, 153, 0.61);
+}
+
+.page-link {
+  color: rgba(66, 13, 153, 0.61);
 }
