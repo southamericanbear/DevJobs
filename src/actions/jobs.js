@@ -1,20 +1,20 @@
-import axios from 'axios';
-import moment from 'moment';
-import { BASE_API_URL } from '../utils/constants';
-import { setErrors } from './errors';
+import axios from "axios";
+import moment from "moment";
+import { BASE_API_URL } from "../utils/constants";
+import { setErrors } from "./errors";
 
-export const initiateGetJobs = (data) => {
+export const initiateGetJobs = (data, isLoadMore) => {
   return async (dispatch) => {
     try {
       let { description, full_time, location, page } = data;
 
-      description = description ? encodeURIComponent(description) : '';
-      location = location ? encodeURIComponent(location) : '';
-      full_time = full_time ? '&full_time=true' : '';
+      description = description ? encodeURIComponent(description) : "";
+      location = location ? encodeURIComponent(location) : "";
+      full_time = full_time ? "&full_time=true" : "";
 
       if (page) {
         page = parseInt(page);
-        page = isNaN(page) ? '' : `&page=${page}`;
+        page = isNaN(page) ? "" : `&page=${page}`;
       }
 
       const jobs = await axios.get(
@@ -26,7 +26,11 @@ export const initiateGetJobs = (data) => {
           moment(new Date(b.created_at)) - moment(new Date(a.created_at))
       );
 
-      return dispatch(setJobs(sortedJobs));
+      if (isLoadMore) {
+        return dispatch(setLoadMoreJobs(sortedJobs));
+      } else {
+        return dispatch(setJobs(sortedJobs));
+      }
     } catch (error) {
       error.response && dispatch(setErrors(error.response.data));
     }
@@ -34,11 +38,11 @@ export const initiateGetJobs = (data) => {
 };
 
 export const setJobs = (jobs) => ({
-  type: 'SET_JOBS',
-  jobs
+  type: "SET_JOBS",
+  jobs,
 });
 
 export const setLoadMoreJobs = (jobs) => ({
-  type: 'LOAD_MORE_JOBS',
-  jobs
+  type: "LOAD_MORE_JOBS",
+  jobs,
 });
