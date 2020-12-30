@@ -1,27 +1,27 @@
-import React, { useState, useContext } from 'react';
-import { Form, Button, Row, Col } from 'react-bootstrap';
-import JobsContext from '../context/jobs';
+import React, { useState, useContext } from "react";
+import { Form, Button, Row, Col } from "react-bootstrap";
+import JobsContext from "../context/jobs";
 
 const Search = () => {
   const { onSearch } = useContext(JobsContext);
 
   const [state, setState] = useState({
-    description: '',
-    location: '',
-    full_time: false
+    description: "",
+    location: "",
+    full_time: false,
   });
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    if (name === 'full_time') {
+    if (name === "full_time") {
       setState((prevState) => ({
         ...state,
-        [name]: !prevState.full_time
+        [name]: !prevState.full_time,
       }));
     } else {
       setState({
         ...state,
-        [name]: value
+        [name]: value,
       });
     }
   };
@@ -41,7 +41,7 @@ const Search = () => {
               <Form.Control
                 type="text"
                 name="description"
-                value={state.description || ''}
+                value={state.description || ""}
                 placeholder="Enter search term"
                 onChange={handleInputChange}
               />
@@ -52,7 +52,7 @@ const Search = () => {
               <Form.Control
                 type="text"
                 name="location"
-                value={state.location || ''}
+                value={state.location || ""}
                 placeholder="Enter location"
                 onChange={handleInputChange}
               />

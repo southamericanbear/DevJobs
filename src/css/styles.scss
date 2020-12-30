@@ -15,7 +15,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 1.6rem;
-  background: #242582;
+  background: white;
   color: $body-color;
   min-height: 100vh;
   letter-spacing: 1px;
@@ -28,13 +28,14 @@ ul {
 .header {
   padding: 2rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   margin-bottom: 2rem;
-
+  background-color: rgba(80, 19, 80, 0.637);
+  border-bottom-left-radius: 50px;
   .title {
     font-weight: 600;
-    font-size: 3rem;
+    font-size: 5rem;
     color: #fff;
   }
 }
@@ -53,6 +54,7 @@ ul {
     letter-spacing: 1px;
     width: 13rem;
     line-height: 1.5;
+    background-color: rgba(80, 19, 80, 0.637);
     color: #fff;
     border: none;
   }
@@ -88,11 +90,12 @@ ul {
 .search-results {
   width: 90%;
   margin: 0 auto;
+  
 
   .job-item {
     display: flex;
     padding: 1rem;
-    border: 1px solid #000;
+    border: 3px solid rgba(80, 19, 80, 0.466);
     border-radius: 0.5rem;
     margin: 2rem;
     cursor: pointer;
@@ -138,7 +141,7 @@ ul {
 
   button {
     border: none;
-    background: #0e7bff;
+    background: rgba(80, 19, 80, 0.637);
     color: #fff;
     border-radius: 20px;
     padding: 10px;
@@ -156,10 +159,13 @@ ul {
     a:visited {
       display: block;
       margin-bottom: 1rem;
+      color: rgb(46, 0, 46);
+      font-size: 2rem;
     }
     a:hover,
     a:active {
-      color: #fff;
+      
+      
       text-decoration: none;
     }
   }
